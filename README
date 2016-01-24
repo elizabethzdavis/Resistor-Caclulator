@@ -1,0 +1,33 @@
+/////README//// —Elizabeth Davis- 
+
+In this project folder there is: 
+2 C files (ResistorMain.c and calc.c)
+1 H file (calc.h)
+1 README text file
+
+///**** TO IMPLEMENT *****///
+type in: gcc ResistorMani.c calc.c
+./a.out
+
+—————————————————————————————————————————————————
+
+Design of code:
+
+The main file only has the main function, but calls 2 functions, fourBand() and fiveBand() from the calc.c file. The main has a continuous loop that asks the user whether they want to continue on or exit and then if they do want to calculate the band resistance, it asks the number of bands. There is also a loop that checks that the entered number is 4 or five and will bring the user back to the starting point if the user enters an invalid input.
+
+The Calc.c code:
+
+The two functions fourBand() and fiveBand() are very similar, but they just distinguish the differences between the two. They both follow the same set up.
+-Initialize the different colors (4 or 5) of length 7 (6 letters max + the enter space)
+-Then asks the user to manually enter each color, and then checks the color was a valid entry
+-There are 3 validate color checks, 1 for the four band colors, 1 for the 5 band colors not including gold and silver and then 1 including it (named validateColor4, validateColor5, and validateColor5last respectively)
+-If the color is not valid (the function returns a 1), then the user is prompted to re enter a valid color and this loop will continue until the user does
+-after each color is entered, the different calculations are calculated, which occurs by calling colorCalc(color name), which string compares to each possible value and returns the integer value. It is already verified that the colors being checked will be valid for that band. 
+-The tolerance band was also validated to be a valid choice for it. For the 4 band resistor, if the input is not gold or silver, the getTolerance4 function returns 20 for the 20 percent
+-the tolerance was calculated differently for each, but string compares with the tolerance band color options and returns an int or float (for the 5 band)
+-The final resistance is then printed in the format that the homework guidelines showed. 
+
+How I designed my code:
+ 
+I worked from the bottom up: I knew I wanted a fourBand() and fiveBand() function and thought of each thing I needed- validating color, calculating the color bands and tolerance and then piecing it all together in the end
+
